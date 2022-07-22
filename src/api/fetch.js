@@ -5,7 +5,8 @@ export const fetchUsers = () =>
     .then((response) => response.json())
     .then((data) => data);
 
-export const fetchSpecificUser = (user) =>
-  fetch(`${URL_USERS}/${user}/repos`)
+export const fetchSpecificUser = (user) => {
+  return fetch(`${URL_USERS}/${user}/repos`)
     .then((response) => response.json())
     .then((data) => data);
+};

@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import User from "../components/User";
 import Main from "../pages/Main";
 
 function RouterPath() {
@@ -12,6 +13,15 @@ function RouterPath() {
           element={
             <>
               <Main />
+            </>
+          }
+        />
+        <Route
+          exact
+          path="/user"
+          element={
+            <>
+              <User />
             </>
           }
         />

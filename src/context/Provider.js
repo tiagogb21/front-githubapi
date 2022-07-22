@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import MyContext from "./index";
+import MyContext from "./myContext";
 
-import { fetchUsers, fetchSpecificUser } from "../../api/fetch";
+import { fetchUsers, fetchSpecificUser } from "../api/fetch";
 
 function MyProvider({ children }) {
   const [dataUser, setDataUser] = useState([]);
@@ -14,19 +14,18 @@ function MyProvider({ children }) {
       setDataUser(data);
     };
 
-    const getDataFromSpecificUser = async () => {
-      const data = await fetchSpecificUser();
-      setDataUser(data);
-    };
-
     getDataFromUser();
-    getDataFromSpecificUser();
   }, []);
+
+  const getDataFromSpecificUser = async (user) => {
+    const data = await fetchSpecificUser(user);
+    setDataSpecificUser(data);
+  };
 
   const store = {
     dataUser,
     dataSpecificUser,
-    setDataSpecificUser,
+    getDataFromSpecificUser,
   };
 
   return <MyContext.Provider value={store}>{children}</MyContext.Provider>;

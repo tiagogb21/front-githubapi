@@ -1,10 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { useNavigate } from "react-router";
+import MyContext from "../../context/myContext";
 
 import "./style.css";
 
 function Main() {
   const [min, setMin] = useState(0);
   const [max, setMax] = useState(12);
+
+  const { dataUser, getDataFromSpecificUser } = useContext(MyContext);
+
+  const navigate = useNavigate();
+
+  const handleClick = (login) => {
+    getDataFromSpecificUser(login);
+    navigate("/user");
+  };
 
   return (
     <main className="container__user">
@@ -14,7 +25,7 @@ function Main() {
             type="button"
             className="box__user"
             key={user.id}
-            onClick={() => getDataFromSpecificUser(user.login)}
+            onClick={() => handleClick(user.login)}
           >
             <img
               className="user-avatar"

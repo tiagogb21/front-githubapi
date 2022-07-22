@@ -1,4 +1,4 @@
-main {
+.container__user {
   display: grid;
   grid-template-columns: repeat(3, 30%);
   padding: 0 3vw;
@@ -37,13 +37,13 @@ main {
 }
 
 @media (max-width: 780px) {
-  main {
+  .container__user {
     grid-template-columns: repeat(2, 40%);
   }
 }
 
 @media (max-width: 430px) {
-  main {
+  .container__user {
     grid-template-columns: repeat(1, 90%);
   }
 }

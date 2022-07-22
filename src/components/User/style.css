@@ -1,0 +1,42 @@
+.container__specifc-user {
+  display: grid;
+  grid-template-columns: 1fr 2.5fr;
+  padding: 3vw;
+}
+
+.project {
+  height: 20vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  border-top: 1px solid rgb(195, 195, 195);
+  border-bottom: 1px solid rgb(195, 195, 195);
+}
+
+.project-info {
+  display: flex;
+}
+
+.project-name {
+  color: #06468f;
+  font-size: 3vh;
+  font-weight: bolder;
+  margin-right: 2vw;
+}
+
+.project-name:hover {
+  text-decoration: underline;
+}
+
+.project-type {
+  font-size: small;
+  text-transform: capitalize;
+  color: rgb(95, 95, 105);
+  border: 1px solid rgb(162, 162, 179);
+  border-radius: 999px;
+  padding: 5px;
+}
+
+.bold-item {
+  font-weight: bolder;
+}
