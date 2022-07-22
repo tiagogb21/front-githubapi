@@ -1,0 +1,49 @@
+main {
+  display: grid;
+  grid-template-columns: repeat(3, 30%);
+  padding: 0 3vw;
+  align-items: center;
+  justify-content: space-around;
+  background: rgb(199, 199, 199);
+}
+
+.box__user {
+  display: flex;
+  margin: 2vw 0;
+  align-items: center;
+  border: 2px solid rgb(10, 46, 122);
+  border-radius: 20px;
+  padding: 1vw;
+  background: rgb(250, 250, 250);
+}
+
+.box__user:hover {
+  cursor: pointer;
+  background: rgb(10, 46, 122);
+  color: rgb(250, 250, 250);
+}
+
+.box__user .user-avatar {
+  width: 10vh;
+  height: 10vh;
+  border-radius: 50%;
+  margin: 0 3vw;
+}
+
+.box__user .user-name {
+  text-transform: capitalize;
+  font-weight: bolder;
+  font-size: 5vh;
+}
+
+@media (max-width: 780px) {
+  main {
+    grid-template-columns: repeat(2, 40%);
+  }
+}
+
+@media (max-width: 430px) {
+  main {
+    grid-template-columns: repeat(1, 90%);
+  }
+}
