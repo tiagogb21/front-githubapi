@@ -7,6 +7,9 @@ import { fetchUsers, fetchSpecificUser } from "../api/fetch";
 function MyProvider({ children }) {
   const [dataUser, setDataUser] = useState([]);
   const [dataSpecificUser, setDataSpecificUser] = useState([]);
+  const [userImage, setUserImage] = useState("");
+  const [userLogin, setUserLogin] = useState("");
+  const [branchesUrl, setBranchesUrl] = useState("");
 
   useEffect(() => {
     const getDataFromUser = async () => {
@@ -26,6 +29,12 @@ function MyProvider({ children }) {
     dataUser,
     dataSpecificUser,
     getDataFromSpecificUser,
+    userImage,
+    userLogin,
+    setUserImage,
+    setUserLogin,
+    branchesUrl,
+    setBranchesUrl,
   };
 
   return <MyContext.Provider value={store}>{children}</MyContext.Provider>;

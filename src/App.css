@@ -1,11 +1,30 @@
+* {
+  /* JFY Coral New  */
+  --apricot: #f4a27e;
+  --apricot-peach: #f9c29d;
+  --corvette: #fcd4a4;
+  --colonial-white: #ffe6ab;
+  /* JFY Black New */
+  --charade: #0d0d0e;
+  --outer-space: #1f282c;
+  --oslo-gray: #90969a;
+  --loblolly: #bec8ce;
+  --iron: #dadfe2;
+  --white: #ffffff;
+  /* JFY Blue New */
+  --daintree: #003141;
+  --nepal: #799fb5;
+  --polo-blue: #7ba7c6;
+  --danube: #7db4da;
+  --loblolly: #acbbc2;
+  --spindle: #a3c8e2;
+  --geyser: #d0dfe3;
+  --gallery: #eaeaea;
+  /* Tipografia */
+}
+
 body {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-header {
-  display: flex;
-  width: 100vw;
-  height: 15vh;
 }

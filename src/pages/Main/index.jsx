@@ -8,13 +8,17 @@ function Main() {
   const [min, setMin] = useState(0);
   const [max, setMax] = useState(12);
 
-  const { dataUser, getDataFromSpecificUser } = useContext(MyContext);
+  const { dataUser, getDataFromSpecificUser, setUserImage, setUserLogin } =
+    useContext(MyContext);
 
   const navigate = useNavigate();
 
-  const handleClick = (login) => {
+  const handleClick = (login, image) => {
     getDataFromSpecificUser(login);
     navigate("/user");
+    console.log(image);
+    setUserImage(image);
+    setUserLogin(login);
   };
 
   return (
@@ -25,7 +29,7 @@ function Main() {
             type="button"
             className="box__user"
             key={user.id}
-            onClick={() => handleClick(user.login)}
+            onClick={() => handleClick(user.login, user.avatar_url)}
           >
             <img
               className="user-avatar"
@@ -48,9 +52,9 @@ function Main() {
         type="button"
         onClick={() => {
           setMin((old) => {
-            console.log(old);
+            // console.log(old);
             old = old > 24 ? 0 : old + 12;
-            console.log(old);
+            // console.log(old);
             return old;
           });
           setMax((old) => (old > 30 ? 12 : old + 12));
