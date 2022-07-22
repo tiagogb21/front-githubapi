@@ -1,26 +1,10 @@
-import React, { useEffect, useState } from "react";
-import { fetchUsers, fetchSpecificUser } from "../../api/fetch";
+import React, { useState } from "react";
 
 import "./style.css";
 
 function Main() {
-  const [dataUser, setDataUser] = useState([]);
-  const [dataSpecificUser, setDataSpecificUser] = useState([]);
   const [min, setMin] = useState(0);
   const [max, setMax] = useState(12);
-
-  useEffect(() => {
-    const getDataFromUser = async () => {
-      const data = await fetchUsers();
-      setDataUser(data);
-    };
-    getDataFromUser();
-  }, []);
-
-  const getDataFromSpecificUser = async (user) => {
-    const data = await fetchSpecificUser(user);
-    setDataSpecificUser(data);
-  };
 
   return (
     <main className="container__user">
